@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F36973623DF57EF00B9ED2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36973523DF57EF00B9ED2D /* AppDelegate.swift */; };
+		2F36973823DF57EF00B9ED2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36973723DF57EF00B9ED2D /* SceneDelegate.swift */; };
+		2F36973A23DF57EF00B9ED2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36973923DF57EF00B9ED2D /* ViewController.swift */; };
+		2F36973D23DF57EF00B9ED2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F36973B23DF57EF00B9ED2D /* Main.storyboard */; };
+		2F36973F23DF57F100B9ED2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F36973E23DF57F100B9ED2D /* Assets.xcassets */; };
+		2F36974223DF57F100B9ED2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F36974023DF57F100B9ED2D /* LaunchScreen.storyboard */; };
+		2F36974D23DF57F100B9ED2D /* Barter_POCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36974C23DF57F100B9ED2D /* Barter_POCTests.swift */; };
+		2F36975823DF57F100B9ED2D /* Barter_POCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36975723DF57F100B9ED2D /* Barter_POCUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2F36974923DF57F100B9ED2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F36972A23DF57EF00B9ED2D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F36973123DF57EF00B9ED2D;
+			remoteInfo = "Barter POC";
+		};
+		2F36975423DF57F100B9ED2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F36972A23DF57EF00B9ED2D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F36973123DF57EF00B9ED2D;
+			remoteInfo = "Barter POC";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2F36973223DF57EF00B9ED2D /* Barter POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Barter POC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F36973523DF57EF00B9ED2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2F36973723DF57EF00B9ED2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2F36973923DF57EF00B9ED2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2F36973C23DF57EF00B9ED2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2F36973E23DF57F100B9ED2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2F36974123DF57F100B9ED2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2F36974323DF57F100B9ED2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F36974823DF57F100B9ED2D /* Barter POCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Barter POCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F36974C23DF57F100B9ED2D /* Barter_POCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barter_POCTests.swift; sourceTree = "<group>"; };
+		2F36974E23DF57F100B9ED2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F36975323DF57F100B9ED2D /* Barter POCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Barter POCUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F36975723DF57F100B9ED2D /* Barter_POCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barter_POCUITests.swift; sourceTree = "<group>"; };
+		2F36975923DF57F100B9ED2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F36972F23DF57EF00B9ED2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F36974523DF57F100B9ED2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F36975023DF57F100B9ED2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F36972923DF57EF00B9ED2D = {
+			isa = PBXGroup;
+			children = (
+				2F36973423DF57EF00B9ED2D /* Barter POC */,
+				2F36974B23DF57F100B9ED2D /* Barter POCTests */,
+				2F36975623DF57F100B9ED2D /* Barter POCUITests */,
+				2F36973323DF57EF00B9ED2D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2F36973323DF57EF00B9ED2D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F36973223DF57EF00B9ED2D /* Barter POC.app */,
+				2F36974823DF57F100B9ED2D /* Barter POCTests.xctest */,
+				2F36975323DF57F100B9ED2D /* Barter POCUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F36973423DF57EF00B9ED2D /* Barter POC */ = {
+			isa = PBXGroup;
+			children = (
+				2F36973523DF57EF00B9ED2D /* AppDelegate.swift */,
+				2F36973723DF57EF00B9ED2D /* SceneDelegate.swift */,
+				2F36973923DF57EF00B9ED2D /* ViewController.swift */,
+				2F36973B23DF57EF00B9ED2D /* Main.storyboard */,
+				2F36973E23DF57F100B9ED2D /* Assets.xcassets */,
+				2F36974023DF57F100B9ED2D /* LaunchScreen.storyboard */,
+				2F36974323DF57F100B9ED2D /* Info.plist */,
+			);
+			path = "Barter POC";
+			sourceTree = "<group>";
+		};
+		2F36974B23DF57F100B9ED2D /* Barter POCTests */ = {
+			isa = PBXGroup;
+			children = (
+				2F36974C23DF57F100B9ED2D /* Barter_POCTests.swift */,
+				2F36974E23DF57F100B9ED2D /* Info.plist */,
+			);
+			path = "Barter POCTests";
+			sourceTree = "<group>";
+		};
+		2F36975623DF57F100B9ED2D /* Barter POCUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2F36975723DF57F100B9ED2D /* Barter_POCUITests.swift */,
+				2F36975923DF57F100B9ED2D /* Info.plist */,
+			);
+			path = "Barter POCUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F36973123DF57EF00B9ED2D /* Barter POC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F36975C23DF57F100B9ED2D /* Build configuration list for PBXNativeTarget "Barter POC" */;
+			buildPhases = (
+				2F36972E23DF57EF00B9ED2D /* Sources */,
+				2F36972F23DF57EF00B9ED2D /* Frameworks */,
+				2F36973023DF57EF00B9ED2D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Barter POC";
+			productName = "Barter POC";
+			productReference = 2F36973223DF57EF00B9ED2D /* Barter POC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2F36974723DF57F100B9ED2D /* Barter POCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F36975F23DF57F100B9ED2D /* Build configuration list for PBXNativeTarget "Barter POCTests" */;
+			buildPhases = (
+				2F36974423DF57F100B9ED2D /* Sources */,
+				2F36974523DF57F100B9ED2D /* Frameworks */,
+				2F36974623DF57F100B9ED2D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F36974A23DF57F100B9ED2D /* PBXTargetDependency */,
+			);
+			name = "Barter POCTests";
+			productName = "Barter POCTests";
+			productReference = 2F36974823DF57F100B9ED2D /* Barter POCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2F36975223DF57F100B9ED2D /* Barter POCUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F36976223DF57F100B9ED2D /* Build configuration list for PBXNativeTarget "Barter POCUITests" */;
+			buildPhases = (
+				2F36974F23DF57F100B9ED2D /* Sources */,
+				2F36975023DF57F100B9ED2D /* Frameworks */,
+				2F36975123DF57F100B9ED2D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F36975523DF57F100B9ED2D /* PBXTargetDependency */,
+			);
+			name = "Barter POCUITests";
+			productName = "Barter POCUITests";
+			productReference = 2F36975323DF57F100B9ED2D /* Barter POCUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F36972A23DF57EF00B9ED2D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Omer Derazon";
+				TargetAttributes = {
+					2F36973123DF57EF00B9ED2D = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					2F36974723DF57F100B9ED2D = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 2F36973123DF57EF00B9ED2D;
+					};
+					2F36975223DF57F100B9ED2D = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 2F36973123DF57EF00B9ED2D;
+					};
+				};
+			};
+			buildConfigurationList = 2F36972D23DF57EF00B9ED2D /* Build configuration list for PBXProject "Barter POC" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2F36972923DF57EF00B9ED2D;
+			productRefGroup = 2F36973323DF57EF00B9ED2D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F36973123DF57EF00B9ED2D /* Barter POC */,
+				2F36974723DF57F100B9ED2D /* Barter POCTests */,
+				2F36975223DF57F100B9ED2D /* Barter POCUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2F36973023DF57EF00B9ED2D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F36974223DF57F100B9ED2D /* LaunchScreen.storyboard in Resources */,
+				2F36973F23DF57F100B9ED2D /* Assets.xcassets in Resources */,
+				2F36973D23DF57EF00B9ED2D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F36974623DF57F100B9ED2D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F36975123DF57F100B9ED2D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F36972E23DF57EF00B9ED2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F36973A23DF57EF00B9ED2D /* ViewController.swift in Sources */,
+				2F36973623DF57EF00B9ED2D /* AppDelegate.swift in Sources */,
+				2F36973823DF57EF00B9ED2D /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F36974423DF57F100B9ED2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F36974D23DF57F100B9ED2D /* Barter_POCTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F36974F23DF57F100B9ED2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F36975823DF57F100B9ED2D /* Barter_POCUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2F36974A23DF57F100B9ED2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F36973123DF57EF00B9ED2D /* Barter POC */;
+			targetProxy = 2F36974923DF57F100B9ED2D /* PBXContainerItemProxy */;
+		};
+		2F36975523DF57F100B9ED2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F36973123DF57EF00B9ED2D /* Barter POC */;
+			targetProxy = 2F36975423DF57F100B9ED2D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2F36973B23DF57EF00B9ED2D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F36973C23DF57EF00B9ED2D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2F36974023DF57F100B9ED2D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F36974123DF57F100B9ED2D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2F36975A23DF57F100B9ED2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2F36975B23DF57F100B9ED2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2F36975D23DF57F100B9ED2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V9P9676GDC;
+				INFOPLIST_FILE = "Barter POC/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "i.Barter-POC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2F36975E23DF57F100B9ED2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V9P9676GDC;
+				INFOPLIST_FILE = "Barter POC/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "i.Barter-POC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2F36976023DF57F100B9ED2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V9P9676GDC;
+				INFOPLIST_FILE = "Barter POCTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "i.Barter-POCTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Barter POC.app/Barter POC";
+			};
+			name = Debug;
+		};
+		2F36976123DF57F100B9ED2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V9P9676GDC;
+				INFOPLIST_FILE = "Barter POCTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "i.Barter-POCTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Barter POC.app/Barter POC";
+			};
+			name = Release;
+		};
+		2F36976323DF57F100B9ED2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V9P9676GDC;
+				INFOPLIST_FILE = "Barter POCUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "i.Barter-POCUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Barter POC";
+			};
+			name = Debug;
+		};
+		2F36976423DF57F100B9ED2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V9P9676GDC;
+				INFOPLIST_FILE = "Barter POCUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "i.Barter-POCUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Barter POC";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F36972D23DF57EF00B9ED2D /* Build configuration list for PBXProject "Barter POC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F36975A23DF57F100B9ED2D /* Debug */,
+				2F36975B23DF57F100B9ED2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F36975C23DF57F100B9ED2D /* Build configuration list for PBXNativeTarget "Barter POC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F36975D23DF57F100B9ED2D /* Debug */,
+				2F36975E23DF57F100B9ED2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F36975F23DF57F100B9ED2D /* Build configuration list for PBXNativeTarget "Barter POCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F36976023DF57F100B9ED2D /* Debug */,
+				2F36976123DF57F100B9ED2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F36976223DF57F100B9ED2D /* Build configuration list for PBXNativeTarget "Barter POCUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F36976323DF57F100B9ED2D /* Debug */,
+				2F36976423DF57F100B9ED2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F36972A23DF57EF00B9ED2D /* Project object */;
+}
