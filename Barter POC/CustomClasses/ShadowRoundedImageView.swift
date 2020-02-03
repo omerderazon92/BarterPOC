@@ -19,7 +19,7 @@ class ShadowRoundedImageView: UIView {
     var shadowLayer: CALayer = CALayer()
 
     var shape: UIBezierPath {
-        return UIBezierPath(roundedRect: bounds, cornerRadius:5) }
+        return UIBezierPath(roundedRect: bounds, cornerRadius: 10) }
 
     var shapeAsPath: CGPath {
         return shape.cgPath }

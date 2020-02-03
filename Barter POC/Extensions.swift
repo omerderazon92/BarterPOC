@@ -56,3 +56,46 @@ public extension UIView {
         layer.add(animation, forKey: "shake")
     }
 }
+
+extension UIView {
+    
+    func bounceAndShine(completion: (() -> ())?) {
+        let shiningView:UIView = {
+            let view = UIView()
+            view.backgroundColor = .white
+            view.alpha = 0.2
+            return view
+        }()
+        
+        addSubview(shiningView)
+        shiningView.translatesAutoresizingMaskIntoConstraints = false
+        shiningView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
+        shiningView.leftAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
+        shiningView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        shiningView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
+        
+        UIView.animate(withDuration: 0.1, animations: {
+            self.transform = CGAffineTransform(scaleX: 1.04, y: 1.04)
+        }) { (_) in
+            UIView.animate(withDuration: 0.07, animations: {
+                self.transform = CGAffineTransform(scaleX: 1.02, y: 1.02)
+            }) { (_) in
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.transform = CGAffineTransform(scaleX: 1.04, y: 1.04)
+                }, completion: { _ in
+                    shiningView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
+                    UIView.animate(withDuration: 0.15, animations: {
+                        self.layoutIfNeeded()
+                    }) { (_) in
+                        shiningView.rightAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
+                        UIView.animate(withDuration: 0.1, animations: {
+                            self.layoutIfNeeded()
+                        }) { (_) in
+                            completion!()
+                        }
+                    }
+                })
+            }
+        }
+    }
+}

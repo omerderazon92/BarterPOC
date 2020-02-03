@@ -95,14 +95,14 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserSpecialRecommendationCollectionViewCell" id="aVe-ue-ahw" customClass="UserSpecialRecommendationCollectionViewCell" customModule="Barter_POC" customModuleProvider="target">
-                                                            <rect key="frame" x="-3" y="0.0" width="400" height="372"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="372"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XIi-nx-WkZ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="400" height="372"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="394" height="372"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oJV-VR-b2W">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="372"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="372"/>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <constraints>
@@ -112,7 +112,7 @@
                                                                     <constraint firstItem="oJV-VR-b2W" firstAttribute="leading" secondItem="XIi-nx-WkZ" secondAttribute="leading" id="oCM-2h-Lq2"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
-                                                            <size key="customSize" width="400" height="372"/>
+                                                            <size key="customSize" width="394" height="372"/>
                                                             <connections>
                                                                 <outlet property="itemImage" destination="oJV-VR-b2W" id="bJX-PG-OrO"/>
                                                             </connections>
@@ -169,17 +169,26 @@
                                                                         <rect key="frame" x="10" y="10" width="388" height="334"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frz-dr-nof">
+                                                                        <rect key="frame" x="321.5" y="297.5" width="66.5" height="31.5"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
                                                                 </subviews>
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="B3e-fQ-VeA" secondAttribute="bottom" constant="10" id="43a-1b-P7P"/>
                                                                     <constraint firstItem="B3e-fQ-VeA" firstAttribute="top" secondItem="oTl-4U-Ggh" secondAttribute="top" constant="10" id="QEe-PL-0iV"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="frz-dr-nof" secondAttribute="bottom" constant="25" id="alH-Fm-zcC"/>
                                                                     <constraint firstAttribute="trailing" secondItem="B3e-fQ-VeA" secondAttribute="trailing" constant="10" id="e2p-cS-xIy"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="frz-dr-nof" secondAttribute="trailing" constant="20" id="mGc-CG-izv"/>
                                                                     <constraint firstItem="B3e-fQ-VeA" firstAttribute="leading" secondItem="oTl-4U-Ggh" secondAttribute="leading" constant="10" id="oUs-aP-pKb"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
                                                             <size key="customSize" width="408" height="354"/>
                                                             <connections>
                                                                 <outlet property="itemImage" destination="B3e-fQ-VeA" id="7mC-sw-4BI"/>
+                                                                <outlet property="titleOfItemLabel" destination="frz-dr-nof" id="6hS-UX-pyW"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>

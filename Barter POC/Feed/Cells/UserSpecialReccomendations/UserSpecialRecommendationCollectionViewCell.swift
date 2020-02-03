@@ -18,8 +18,8 @@ class UserSpecialRecommendationCollectionViewCell: UICollectionViewCell {
     func set(item: Item){
         self.item = item
         itemImage.image = item.images.first
-        itemImage.layer.cornerRadius = 5
-        layer.cornerRadius = 5
+        itemImage.layer.cornerRadius = 10
+        layer.cornerRadius = 10
         layer.borderWidth = 0.7
         layer.borderColor = UIColor.lightGray.cgColor
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(UserSpecialRecommendationCollectionViewCell.imageTapped))
@@ -28,16 +28,20 @@ class UserSpecialRecommendationCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func imageTapped() {
-        UIView.animate(withDuration: 0.1,
-        animations: {
-            self.transform = CGAffineTransform(scaleX: 0.90, y: 0.90)
-        },
-        completion: { _ in
-            UIView.animate(withDuration: 0.1, animations: {
-               self.transform = CGAffineTransform.identity
-            }) { (_) in
-                self.delegate?.moveToItemScreen(item: self.item!)
-            }
-        })
+//        UIView.animate(withDuration: 0.1,
+//        animations: {
+//            self.transform = CGAffineTransform(scaleX: 0.90, y: 0.90)
+//        },
+//        completion: { _ in
+//            UIView.animate(withDuration: 0.1, animations: {
+//               self.transform = CGAffineTransform.identity
+//            }) { (_) in
+//                self.delegate?.moveToItemScreen(item: self.item!)
+//            }
+//        })
+        bounceAndShine {
+            self.delegate?.moveToItemScreen(item: self.item!)
+            self.transform = CGAffineTransform.identity
+        }
     }
 }

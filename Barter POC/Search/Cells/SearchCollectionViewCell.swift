@@ -34,7 +34,7 @@ class SearchCollectionViewCell:UICollectionViewCell {
     func set() {
         //Set Image
         itemImage.image = item?.images.first
-        itemImage.layer.cornerRadius = 5
+        itemImage.layer.cornerRadius = 10
         itemImage.layer.borderWidth = 0.7
         itemImage.layer.borderColor = UIColor.lightGray.cgColor
         //Bring buttons to back
