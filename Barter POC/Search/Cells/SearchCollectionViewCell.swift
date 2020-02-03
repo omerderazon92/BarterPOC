@@ -88,7 +88,7 @@ extension SearchCollectionViewCell {
     
     private func closeClick(withAnimation:Bool = true) {
         likeButtonBottomConstraint.constant = 50
-        declineButtonBottomConstraint.constant = 200
+        declineButtonBottomConstraint.constant = 150
         animateConstraintChanges(with: { _ in
             self.itemNameBottomConstraint.constant = 25
             self.animateConstraintChanges(with: nil, duration: 0.3)

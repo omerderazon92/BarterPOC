@@ -57,8 +57,7 @@ extension UserSpecialRecommendationsTableViewCell: UICollectionViewDelegate, UIC
 
 extension UserSpecialRecommendationsTableViewCell: UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let topCellsGapping = collectionView.frame.height * 0.01
-        return UIEdgeInsets(top: topCellsGapping, left: 0, bottom: topCellsGapping, right: 0)//here your custom value for spacing
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)//here your custom value for spacing
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
