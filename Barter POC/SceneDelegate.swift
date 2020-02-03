@@ -18,6 +18,40 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        let mainVC = storyboard.instantiateViewController(withIdentifier: "FeedViewController") as! FeedViewController
+        mainVC.presenter = FeedPresenter()
+        let searchVC = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        searchVC.presenter = SearchPresenter()
+        let addItemVC = UINavigationController(rootViewController: storyboard.instantiateViewController(withIdentifier: "AddItemViewController")) 
+        let winningVC = storyboard.instantiateViewController(withIdentifier: "WinningPickItemViewController")
+        
+        let mainVCTabBarItem = UITabBarItem()
+        mainVCTabBarItem.image = UIImage(imageLiteralResourceName: "feed")
+        mainVC.tabBarItem = mainVCTabBarItem
+        
+        let searchVCTabBarItem = UITabBarItem()
+        searchVCTabBarItem.image = UIImage(imageLiteralResourceName: "search")
+        searchVC.tabBarItem = searchVCTabBarItem
+        
+        let addItemVCTabBarItem = UITabBarItem()
+        addItemVCTabBarItem.image = UIImage(imageLiteralResourceName: "add")
+        addItemVC.tabBarItem = addItemVCTabBarItem
+        
+        let winningPickItemTabBar = UITabBarItem()
+        winningPickItemTabBar.image = UIImage(imageLiteralResourceName: "my_presents")
+        winningVC.tabBarItem = winningPickItemTabBar
+        winningPickItemTabBar.badgeValue = "2"
+        winningPickItemTabBar.badgeColor = .systemRed
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [mainVC, searchVC, addItemVC, winningVC]
+        tabBarController.selectedViewController = mainVC
+        tabBarController.selectedIndex = 0
+        
+        window!.rootViewController = tabBarController
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

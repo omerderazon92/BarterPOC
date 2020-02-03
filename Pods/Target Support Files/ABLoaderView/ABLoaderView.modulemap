@@ -1,0 +1,6 @@
+module ABLoaderView {
+  umbrella header "ABLoaderView-umbrella.h"
+
+  export *
+  module * { export * }
+}

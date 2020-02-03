@@ -1,0 +1,6 @@
+module Pods_Barter_POC {
+  umbrella header "Pods-Barter POC-umbrella.h"
+
+  export *
+  module * { export * }
+}

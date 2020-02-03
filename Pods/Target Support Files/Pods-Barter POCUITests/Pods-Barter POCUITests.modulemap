@@ -1,0 +1,6 @@
+framework module Pods_Barter_POCUITests {
+  umbrella header "Pods-Barter POCUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
