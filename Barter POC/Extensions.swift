@@ -63,7 +63,7 @@ extension UIView {
         let shiningView:UIView = {
             let view = UIView()
             view.backgroundColor = .white
-            view.alpha = 0.05
+            view.alpha = 0.07
             return view
         }()
         
