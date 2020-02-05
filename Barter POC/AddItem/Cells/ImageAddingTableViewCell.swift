@@ -85,7 +85,8 @@ class ButtonCell: UICollectionViewCell {
     
     func set() {
         itemImage.isHidden = true
-        layer.borderWidth = 1
+        layer.borderColor = UIColor.lightGray.cgColor
+        layer.borderWidth = 0.5
         layer.cornerRadius = 10
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ButtonCell.uploadImage))
         letsUploadLabel.addGestureRecognizer(tapGesture)
