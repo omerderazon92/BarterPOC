@@ -78,6 +78,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="381"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="הצג הכל" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djK-4y-EpE">
+                                                    <rect key="frame" x="40" y="15" width="56" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="קטגוריה" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8m-Or-AKa">
                                                     <rect key="frame" x="20" y="7" width="374" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
@@ -123,11 +129,14 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="v8m-Or-AKa" secondAttribute="trailing" constant="20" id="64u-QE-MH6"/>
                                                 <constraint firstItem="J5q-Xw-8Ab" firstAttribute="leading" secondItem="4zb-bm-5tG" secondAttribute="leading" constant="10" id="GXL-gF-TUh"/>
+                                                <constraint firstItem="J5q-Xw-8Ab" firstAttribute="top" secondItem="djK-4y-EpE" secondAttribute="bottom" constant="5" id="IS8-Pl-39U"/>
                                                 <constraint firstAttribute="bottom" secondItem="J5q-Xw-8Ab" secondAttribute="bottom" constant="20" id="T7C-lV-cli"/>
                                                 <constraint firstItem="J5q-Xw-8Ab" firstAttribute="top" secondItem="4zb-bm-5tG" secondAttribute="top" constant="40" id="WAg-LA-lTg"/>
+                                                <constraint firstItem="djK-4y-EpE" firstAttribute="leading" secondItem="4zb-bm-5tG" secondAttribute="leading" constant="40" id="YD4-pk-FsP"/>
                                                 <constraint firstItem="v8m-Or-AKa" firstAttribute="leading" secondItem="4zb-bm-5tG" secondAttribute="leading" constant="20" id="bRM-1R-Xja"/>
                                                 <constraint firstItem="v8m-Or-AKa" firstAttribute="top" secondItem="4zb-bm-5tG" secondAttribute="top" constant="7" id="dls-Pd-8uf"/>
                                                 <constraint firstAttribute="trailing" secondItem="J5q-Xw-8Ab" secondAttribute="trailing" constant="10" id="muT-UU-AGX"/>
+                                                <constraint firstItem="djK-4y-EpE" firstAttribute="top" secondItem="4zb-bm-5tG" secondAttribute="top" constant="15" id="nB7-5R-zV4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -142,8 +151,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="357"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="הצג הכל" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IP-6l-Ubu">
+                                                    <rect key="frame" x="40" y="15" width="56" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="הכי חמות בשוק" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8X-0I-64b">
-                                                    <rect key="frame" x="20" y="15" width="374" height="20"/>
+                                                    <rect key="frame" x="240" y="15" width="154" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -196,13 +211,15 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="jOz-30-Sv7" firstAttribute="leading" secondItem="859-Vs-t5I" secondAttribute="leading" id="1m6-JW-Q9o"/>
+                                                <constraint firstItem="jOz-30-Sv7" firstAttribute="top" secondItem="8IP-6l-Ubu" secondAttribute="bottom" constant="5" id="5Lp-l4-hFN"/>
                                                 <constraint firstAttribute="bottom" secondItem="jOz-30-Sv7" secondAttribute="bottom" id="6fE-u6-Zd7"/>
                                                 <constraint firstAttribute="trailing" secondItem="jOz-30-Sv7" secondAttribute="trailing" id="6fI-Lj-cnD"/>
                                                 <constraint firstItem="j8X-0I-64b" firstAttribute="top" secondItem="859-Vs-t5I" secondAttribute="top" constant="15" id="EZ6-zb-TFx"/>
+                                                <constraint firstItem="8IP-6l-Ubu" firstAttribute="leading" secondItem="859-Vs-t5I" secondAttribute="leading" constant="40" id="F1m-Fb-jKR"/>
                                                 <constraint firstItem="jOz-30-Sv7" firstAttribute="top" secondItem="859-Vs-t5I" secondAttribute="top" constant="40" id="KHX-g6-0mn"/>
-                                                <constraint firstItem="j8X-0I-64b" firstAttribute="leading" secondItem="859-Vs-t5I" secondAttribute="leading" constant="20" id="dSP-rb-gH5"/>
                                                 <constraint firstAttribute="trailing" secondItem="j8X-0I-64b" secondAttribute="trailing" constant="20" id="hBk-Kw-Kbp"/>
-                                                <constraint firstItem="jOz-30-Sv7" firstAttribute="top" secondItem="j8X-0I-64b" secondAttribute="bottom" constant="5" id="mKG-2A-HUb"/>
+                                                <constraint firstItem="jOz-30-Sv7" firstAttribute="top" secondItem="j8X-0I-64b" secondAttribute="bottom" constant="10" id="mKG-2A-HUb"/>
+                                                <constraint firstItem="8IP-6l-Ubu" firstAttribute="top" secondItem="859-Vs-t5I" secondAttribute="top" constant="15" id="t6d-MH-gL2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

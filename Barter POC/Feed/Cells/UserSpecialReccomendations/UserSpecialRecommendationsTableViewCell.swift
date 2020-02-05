@@ -35,9 +35,6 @@ class UserSpecialRecommendationsTableViewCell: UITableViewCell {
         userSpecialReccomendationCollectionView.collectionViewLayout = layout
 
         categoryNameLabel.text = ("\(category?.name ?? "")")
-        if let subName = category?.subName {
-            categoryNameLabel.text?.append("- " + subName)
-        }
     }
 }
 

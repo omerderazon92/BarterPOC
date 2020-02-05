@@ -22,6 +22,8 @@ class BestRecommendationTableViewCell: UITableViewCell {
     }
     
     func set() {
+        setGradientBackground(colorOne: UIColor.white, colorTwo: UIColor.lightGray)
+        bestReccomendedItamesCollectionView.backgroundColor = .clear
         bestReccomendedItamesCollectionView.delegate = self
         bestReccomendedItamesCollectionView.dataSource = self
         bestReccomendedItamesCollectionView.showsHorizontalScrollIndicator = false
@@ -61,5 +63,15 @@ extension BestRecommendationTableViewCell: UICollectionViewDelegateFlowLayout, U
         if !decelerate {
             self.bestReccomendedItamesCollectionView.scrollToNearestVisibleCollectionViewCell()
         }
+    }
+}
+
+extension UIView {
+    func setGradientBackground(colorOne: UIColor, colorTwo: UIColor) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor]
+        gradientLayer.locations = [0.0, 4.0]
+        layer.insertSublayer(gradientLayer, at: 0)
     }
 }
