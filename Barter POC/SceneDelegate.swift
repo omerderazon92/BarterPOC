@@ -29,18 +29,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let mainVCTabBarItem = UITabBarItem()
         mainVCTabBarItem.image = UIImage(imageLiteralResourceName: "feed")
+        mainVCTabBarItem.title = "פיד"
         mainVC.tabBarItem = mainVCTabBarItem
         
         let searchVCTabBarItem = UITabBarItem()
         searchVCTabBarItem.image = UIImage(imageLiteralResourceName: "search")
+        searchVCTabBarItem.title = "חיפוש"
         searchVC.tabBarItem = searchVCTabBarItem
         
         let addItemVCTabBarItem = UITabBarItem()
         addItemVCTabBarItem.image = UIImage(imageLiteralResourceName: "add")
+        addItemVCTabBarItem.title = "הוסף"
         addItemVC.tabBarItem = addItemVCTabBarItem
         
         let winningPickItemTabBar = UITabBarItem()
         winningPickItemTabBar.image = UIImage(imageLiteralResourceName: "my_presents")
+        winningPickItemTabBar.title = "המתנות שלך"
         winningVC.tabBarItem = winningPickItemTabBar
         winningPickItemTabBar.badgeValue = "2"
         winningPickItemTabBar.badgeColor = .systemRed

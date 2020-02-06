@@ -41,7 +41,9 @@ class UserSpecialRecommendationCollectionViewCell: UICollectionViewCell {
 //        })
         bounceAndShine {
             self.delegate?.moveToItemScreen(item: self.item!)
-            self.transform = CGAffineTransform.identity
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+               self.transform = CGAffineTransform.identity
+            }
         }
     }
 }

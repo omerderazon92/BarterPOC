@@ -38,7 +38,9 @@ class BestRecommendedItemCollectionViewCell: UICollectionViewCell {
     @objc func imageTapped() {
         bounceAndShine(completion: {
             self.delegate?.moveToItemScreen(item: self.item!)
-            self.transform = CGAffineTransform.identity
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+               self.transform = CGAffineTransform.identity
+            }
         })
     }
 }

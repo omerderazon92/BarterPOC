@@ -63,7 +63,7 @@ extension UIView {
         let shiningView:UIView = {
             let view = UIView()
             view.backgroundColor = .white
-            view.alpha = 0.07
+            view.alpha = 0.13
             return view
         }()
         
@@ -73,8 +73,10 @@ extension UIView {
         shiningView.leftAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
         shiningView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         shiningView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
-        
+
+        shiningView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
         UIView.animate(withDuration: 0.1, animations: {
+            self.layoutIfNeeded()
             self.transform = CGAffineTransform(scaleX: 1.04, y: 1.04)
         }) { (_) in
             UIView.animate(withDuration: 0.07, animations: {
@@ -83,12 +85,11 @@ extension UIView {
                 UIView.animate(withDuration: 0.2, animations: {
                     self.transform = CGAffineTransform(scaleX: 1.04, y: 1.04)
                 }, completion: { _ in
-                    shiningView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
                     UIView.animate(withDuration: 0.15, animations: {
                         self.layoutIfNeeded()
                     }) { (_) in
                         shiningView.rightAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
-                        UIView.animate(withDuration: 0.1, animations: {
+                        UIView.animate(withDuration: 0.2, animations: {
                             self.layoutIfNeeded()
                         }) { (_) in
                             completion!()

@@ -86,7 +86,12 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.frame.height / 2.2
+        if (indexPath.item == 0) {
+            return tableView.frame.height / 2.2
+        } else {
+            //TODO chech how to do it realtive to the iphone size
+            return tableView.frame.height / 3.7
+        }
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
