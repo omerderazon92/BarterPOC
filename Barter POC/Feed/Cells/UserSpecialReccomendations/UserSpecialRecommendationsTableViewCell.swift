@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class UserSpecialRecommendationsTableViewCell: UITableViewCell {
-    
+
     @IBOutlet var userSpecialReccomendationCollectionView: UICollectionView!
     @IBOutlet var categoryNameLabel: UILabel!
     var delegate:ItemsManagerDelegate?
@@ -28,13 +28,29 @@ class UserSpecialRecommendationsTableViewCell: UITableViewCell {
         userSpecialReccomendationCollectionView.delegate = self
         userSpecialReccomendationCollectionView.dataSource = self
         userSpecialReccomendationCollectionView.showsHorizontalScrollIndicator = false
-        userSpecialReccomendationCollectionView.scrollToNearestVisibleCollectionViewCell()
-
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         userSpecialReccomendationCollectionView.collectionViewLayout = layout
 
         categoryNameLabel.text = ("\(category?.name ?? "")")
+        let name = Notification.Name("fixUserReccomendationsCollectionViewPlacing")
+        NotificationCenter.default.addObserver(self, selector: #selector(self.fixCollectionViewPlacing), name: name, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.deleteItem(_:)), name: NSNotification.Name(rawValue: "deleteSpecialRecommendationItem"), object: nil)
+    }
+    
+    @objc func deleteItem(_ notification: Notification) {
+        if let item = notification.userInfo?["item"] as? Item {
+            let indexFor = items?.firstIndex{$0 === item}
+            guard let index = indexFor else {
+                return
+            }
+            items?.remove(at: index)
+        }
+    }
+        
+    @objc func fixCollectionViewPlacing() {
+        userSpecialReccomendationCollectionView.scrollToNearestVisibleCollectionViewCell()
     }
 }
 
@@ -48,19 +64,22 @@ extension UserSpecialRecommendationsTableViewCell: UICollectionViewDelegate, UIC
         cell.set(item: items![indexPath.item])
         cell.delegate = delegate
         return cell
-        
     }
 }
 
 extension UserSpecialRecommendationsTableViewCell: UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)//here your custom value for spacing
+        return UIEdgeInsets(top: 5, left: 7, bottom: 5, right: 7)//here your custom value for spacing
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let heightSquareValue = collectionView.frame.width / 3.2
+        let heightSquareValue = collectionView.frame.width * 0.30
 
         return CGSize(width: heightSquareValue, height: heightSquareValue)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 protocol ImagesEditingDelegate {
+    func deleteImage(collectionViewCell: UICollectionViewCell)
     func addImage(image:UIImage)
     func provideImages() -> [UIImage]
 }
@@ -20,6 +21,14 @@ class ImageAddingTableViewCell:UITableViewCell, ImagesEditingDelegate {
     @IBOutlet var imageNumberLabel: UILabel!
     var cameraDelegate:CameraDelegate?
     var images:[UIImage] = [UIImage()]
+    
+    func deleteImage(collectionViewCell: UICollectionViewCell) {
+        guard let indexPath = addImageCollectionView.indexPath(for: collectionViewCell) else {
+            return
+        }
+        images.remove(at: indexPath.item)
+        addImageCollectionView.reloadData()
+    }
     
     func set() {
         imageNumberLabel.text = " התמונה הראשונה תהיה תמונת השער של הפוסט שלך"
@@ -74,6 +83,7 @@ class ButtonCell: UICollectionViewCell {
         
     @IBOutlet var letsUploadLabel: UILabel!
     @IBOutlet var itemImage: UIImageView!
+    @IBOutlet var xImage: UIImageView!
     
     var cameraDelegate: CameraDelegate?
     
@@ -85,15 +95,24 @@ class ButtonCell: UICollectionViewCell {
     
     func set() {
         itemImage.isHidden = true
+        
         layer.borderColor = UIColor.lightGray.cgColor
         layer.borderWidth = 0.5
         layer.cornerRadius = 10
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ButtonCell.uploadImage))
         letsUploadLabel.addGestureRecognizer(tapGesture)
         letsUploadLabel.isUserInteractionEnabled = true
+        
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(ButtonCell.deleteImage))
+        xImage.addGestureRecognizer(tapGesture2)
+        xImage.isUserInteractionEnabled = true
     }
     
     @objc func uploadImage() {
         cameraDelegate?.openCamera()
+    }
+    
+    @objc func deleteImage() {
+        cameraDelegate?.deleteImage(collectionViewCell: self)
     }
 }

@@ -47,13 +47,6 @@ class SearchCollectionViewCell:UICollectionViewCell {
         //Set buttons
         likeButtonWidthConstraint.constant = frame.width / 2.1
         declineButtonWidthConstraint.constant = frame.width / 2.1
-        likeButton.layer.borderColor = UIColor.systemGreen.cgColor
-        declineButton.layer.borderColor = UIColor.systemRed.cgColor
-        likeButton.layer.borderWidth = 0.7
-        declineButton.layer.borderWidth = 0.5
-        likeButton.layer.cornerRadius = 5
-        declineButton.layer.cornerRadius = 5
-        likeButton.setTitleColor(.black, for: .normal)
         declineButton.setTitleColor(.black, for: .normal)
     }
     
@@ -70,7 +63,7 @@ class SearchCollectionViewCell:UICollectionViewCell {
         animateThis(animation: {
             self.alpha = 0
         }, duration: 0.5) { _ in
-            self.delegate?.deleteItem(collectionViewCell: self)
+            self.delegate?.deleteItemWithCell(collectionViewCell: self)
         }
     }
 }

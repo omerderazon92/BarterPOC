@@ -39,11 +39,23 @@ class UserSpecialRecommendationCollectionViewCell: UICollectionViewCell {
 //                self.delegate?.moveToItemScreen(item: self.item!)
 //            }
 //        })
-        bounceAndShine {
+//        bounceAndShine {
+//            let generatedString = Int.random(in: 1...1500)
+//            self.hero.id = generatedString.description
+//            ItemViewController.id = generatedString
+//            ItemViewController.idForLabel = 1
+//            self.delegate?.moveToItemScreen(item: self.item!)
+//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+//                self.transform = CGAffineTransform.identity
+//            }
+        let generatedString = Int.random(in: 1...1500)
+        self.hero.id = generatedString.description
+        ItemViewController.id = generatedString
+        ItemViewController.idForLabel = 1
+//        }
+        smallBounce(completion: {
             self.delegate?.moveToItemScreen(item: self.item!)
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-               self.transform = CGAffineTransform.identity
-            }
-        }
+            self.transform = .identity
+        })
     }
 }

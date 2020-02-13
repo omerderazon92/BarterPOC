@@ -17,6 +17,7 @@ class SearchViewController: UIViewController, ItemsManagerDelegate {
             searchCollectionVIew.reloadData()
         }
     }
+    
     var presenter:SearchPresenterCapabilities?
     
     override func viewDidLoad() {
@@ -31,7 +32,7 @@ class SearchViewController: UIViewController, ItemsManagerDelegate {
         layout.minimumInteritemSpacing = 5
         searchCollectionVIew.setCollectionViewLayout(layout, animated: true)
         
-        
+        title = "חיפוש"
     }
 
     func moveToItemScreen(item: Item) {
@@ -40,10 +41,10 @@ class SearchViewController: UIViewController, ItemsManagerDelegate {
         }
         vc.itemsManagerDelegate = self
         vc.item = item
-        present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
-    func deleteItem(collectionViewCell: UICollectionViewCell) {
+    func deleteItemWithCell(collectionViewCell: UICollectionViewCell) {
         guard let indexPath = searchCollectionVIew.indexPath(for: collectionViewCell) else {
             return
         }
@@ -58,7 +59,14 @@ class SearchViewController: UIViewController, ItemsManagerDelegate {
         let title = "בהצלחה!"
         let details = "בקרוב בעל המוצר יקבל את ההודעה שלך. במידה ויאהב את אחד ממוצריך- אולי תוכלו להשלים את העסקה!"
         vc.set(title: title, details: details)
-        present(vc, animated: true, completion: nil)
+        navigationController?.popToViewController(self, animated: true)
+        present(vc, animated: true) {
+            
+        }
+    }
+
+    func deleteItemWithItem(item: Item) {
+        
     }
 }
 
@@ -113,7 +121,9 @@ extension SearchViewController: UISearchBarDelegate {
                 child.willMove(toParent: nil)
                 child.view.removeFromSuperview()
                 child.removeFromParent()
+            if (searchBar.text == "סוני") {
                 self.items = self.presenter?.fetchSearchResults()
-           }
+            }
+        }
     }
 }

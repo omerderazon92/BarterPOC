@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class BestRecommendationTableViewCell: UITableViewCell {
-    
+
     @IBOutlet var bestReccomendedItamesCollectionView: UICollectionView!
     var delegate:ItemsManagerDelegate?
     var presenter: BestRecommendationsPresenterCapabilities?
@@ -27,13 +27,25 @@ class BestRecommendationTableViewCell: UITableViewCell {
         bestReccomendedItamesCollectionView.delegate = self
         bestReccomendedItamesCollectionView.dataSource = self
         bestReccomendedItamesCollectionView.showsHorizontalScrollIndicator = false
-        bestReccomendedItamesCollectionView.scrollToNearestVisibleCollectionViewCell()
+        bestReccomendedItamesCollectionView.isPagingEnabled = true
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         bestReccomendedItamesCollectionView.collectionViewLayout = layout
     
         items = presenter?.fetchRecommendations()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.deleteItem(_:)), name: NSNotification.Name(rawValue: "deleteBestRecommendationItem"), object: nil)
+    }
+    
+    @objc func deleteItem(_ notification: Notification) {
+        if let item = notification.userInfo?["item"] as? Item {
+            let indexFor = items?.firstIndex{$0 === item}
+            guard let index = indexFor else {
+                return
+            }
+            items?.remove(at: index)
+        }
     }
 }
 
@@ -52,17 +64,7 @@ extension BestRecommendationTableViewCell: UICollectionViewDelegate, UICollectio
 
 extension BestRecommendationTableViewCell: UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: bestReccomendedItamesCollectionView.frame.width, height: bestReccomendedItamesCollectionView.frame.height)
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        self.bestReccomendedItamesCollectionView.scrollToNearestVisibleCollectionViewCell()
-    }
-
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if !decelerate {
-            self.bestReccomendedItamesCollectionView.scrollToNearestVisibleCollectionViewCell()
-        }
+        return CGSize(width: bestReccomendedItamesCollectionView.frame.width * 0.98, height: bestReccomendedItamesCollectionView.frame.height)
     }
 }
 

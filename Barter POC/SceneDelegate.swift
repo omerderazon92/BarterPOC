@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    let myItemsTabBarItem = UITabBarItem()
+    let myItemsPresenter = MyItemsPresenter()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -22,14 +24,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let mainVC = storyboard.instantiateViewController(withIdentifier: "FeedViewController") as! FeedViewController
         mainVC.presenter = FeedPresenter()
+        let mainVCNav = UINavigationController(rootViewController: mainVC)
+        
         let searchVC = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
         searchVC.presenter = SearchPresenter()
-        let addItemVC = UINavigationController(rootViewController: storyboard.instantiateViewController(withIdentifier: "AddItemViewController")) 
+        let searchVCNav = UINavigationController(rootViewController: searchVC)
+
+        let addItemVC = storyboard.instantiateViewController(withIdentifier: "AddItemViewController")
+        let addItemVCNav = UINavigationController(rootViewController: addItemVC)
+        
         let winningVC = storyboard.instantiateViewController(withIdentifier: "WinningPickItemViewController")
+        
+        let myItemsVC = storyboard.instantiateViewController(identifier: "MyItemsViewController") as! MyItemsViewController
+        myItemsVC.presenter = myItemsPresenter
+        let myItemsVCNav = UINavigationController(rootViewController: myItemsVC)
         
         let mainVCTabBarItem = UITabBarItem()
         mainVCTabBarItem.image = UIImage(imageLiteralResourceName: "feed")
-        mainVCTabBarItem.title = "פיד"
+        mainVCTabBarItem.title = "עבורך"
         mainVC.tabBarItem = mainVCTabBarItem
         
         let searchVCTabBarItem = UITabBarItem()
@@ -42,20 +54,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         addItemVCTabBarItem.title = "הוסף"
         addItemVC.tabBarItem = addItemVCTabBarItem
         
-        let winningPickItemTabBar = UITabBarItem()
-        winningPickItemTabBar.image = UIImage(imageLiteralResourceName: "my_presents")
-        winningPickItemTabBar.title = "המתנות שלך"
-        winningVC.tabBarItem = winningPickItemTabBar
-        winningPickItemTabBar.badgeValue = "2"
-        winningPickItemTabBar.badgeColor = .systemRed
+        let winningPickItemTabBarItem = UITabBarItem()
+        winningPickItemTabBarItem.image = UIImage(imageLiteralResourceName: "my_presents")
+        winningPickItemTabBarItem.title = "המתנות שלך"
+        winningVC.tabBarItem = winningPickItemTabBarItem
+        winningPickItemTabBarItem.badgeValue = "2"
+        winningPickItemTabBarItem.badgeColor = .systemRed
+        
+        myItemsTabBarItem.image = UIImage(imageLiteralResourceName: "storage")
+        myItemsTabBarItem.title = "פריטיי"
+        myItemsVCNav.tabBarItem = myItemsTabBarItem
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [mainVC, searchVC, addItemVC, winningVC]
-        tabBarController.selectedViewController = mainVC
+        tabBarController.viewControllers = [mainVCNav, searchVCNav, addItemVCNav, myItemsVCNav]
+        tabBarController.selectedViewController = mainVCNav
         tabBarController.selectedIndex = 0
         
         window!.rootViewController = tabBarController
-
+         IQKeyboardManager.shared.enable = true
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -78,6 +94,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+        let numberOfCurrentOffers = myItemsPresenter.fetchNumberOfCurrentOffers()
+        myItemsTabBarItem.badgeColor = .systemRed
+        myItemsTabBarItem.badgeValue = numberOfCurrentOffers > 0 ? numberOfCurrentOffers.description : nil
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {

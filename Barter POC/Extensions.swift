@@ -77,13 +77,13 @@ extension UIView {
         shiningView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
         UIView.animate(withDuration: 0.1, animations: {
             self.layoutIfNeeded()
-            self.transform = CGAffineTransform(scaleX: 1.04, y: 1.04)
+            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
         }) { (_) in
             UIView.animate(withDuration: 0.07, animations: {
-                self.transform = CGAffineTransform(scaleX: 1.02, y: 1.02)
+                self.transform = CGAffineTransform(scaleX: 1.07, y: 1.07)
             }) { (_) in
                 UIView.animate(withDuration: 0.2, animations: {
-                    self.transform = CGAffineTransform(scaleX: 1.04, y: 1.04)
+                    self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
                 }, completion: { _ in
                     UIView.animate(withDuration: 0.15, animations: {
                         self.layoutIfNeeded()
@@ -98,5 +98,16 @@ extension UIView {
                 })
             }
         }
+    }
+    
+    func smallBounce(completion: (() -> ())?) {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        }, completion: { _ in
+            guard let completeTransition = completion else {
+                return
+            }
+            completeTransition()
+        })
     }
 }

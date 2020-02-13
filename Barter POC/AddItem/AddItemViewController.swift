@@ -11,6 +11,7 @@ import UIKit
 
 protocol CameraDelegate {
     func openCamera()
+    func deleteImage(collectionViewCell: UICollectionViewCell)
 }
 
 class AddItemViewController: UIViewController {
@@ -28,7 +29,7 @@ class AddItemViewController: UIViewController {
         addItemTableView.alwaysBounceVertical = false
 //        addItemTableView.isScrollEnabled = false
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "הבא", style: .done, target: self, action: #selector(action(sender:)))
-
+        title = "הוסף"
     }
     
     @objc func action(sender: UIBarButtonItem) {
@@ -39,11 +40,29 @@ class AddItemViewController: UIViewController {
 extension AddItemViewController: CameraDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func openCamera() {
-        let vc = UIImagePickerController()
-         vc.sourceType = .camera
-         vc.allowsEditing = true
-         vc.delegate = self
-         present(vc, animated: true)
+        let alert = UIAlertController(title: "מאיפה ניקח את התמונה?", message: "חביבי", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "אלבום", style: .default, handler: { (_) in
+            let vc = UIImagePickerController()
+            vc.sourceType = .photoLibrary
+            vc.allowsEditing = true
+            vc.delegate = self
+            self.present(vc, animated: true)
+        }))
+        alert.addAction(UIAlertAction(title: "מצלמה", style: .default, handler: { (_) in
+            let vc = UIImagePickerController()
+            vc.sourceType = .camera
+            vc.allowsEditing = true
+            vc.delegate = self
+            self.present(vc, animated: true)
+        }))
+        alert.addAction(UIAlertAction(title: "ביטול", style: .cancel, handler: { (_) in
+        }))
+
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func deleteImage(collectionViewCell: UICollectionViewCell) {
+        imageEditingDelegate?.deleteImage(collectionViewCell: collectionViewCell)
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -93,7 +112,7 @@ extension AddItemViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.item == 0 {
             return tableView.frame.height / 2.2
         } else if indexPath.item == 1 {
-            return tableView.frame.height / 7
+            return tableView.frame.height / 2
         }
         return tableView.frame.height / 4
     }

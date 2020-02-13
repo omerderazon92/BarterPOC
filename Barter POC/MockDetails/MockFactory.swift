@@ -13,14 +13,45 @@ class MockFactory {
     
     static let instance = MockFactory()
     
+    private var bestReccomendations:[Item]?
+    
     func provideBestRecommendations() -> [Item] {
-        let dyson = Item(id: "1", name: "דייסון", owner: "1a", category: "Vacooms",
-                         images: [UIImage(imageLiteralResourceName: "dyson_vacume")])
-        let sonyPlaystation = Item(id: "2", name: "סוני פלייסטיישן", owner: "2b", category: "VideoGames",
-                        images: [UIImage(imageLiteralResourceName: "sony_playstation")])
-        let electricBicycle = Item(id: "3", name: "אופניים חשמליים", owner: "3c", category: "ElectricBicycle",
-                                    images: [UIImage(imageLiteralResourceName: "electric_bicycle")])
-        return [electricBicycle, dyson, sonyPlaystation]
+        
+        if bestReccomendations == nil {
+             let backpack1 = Item(id: "3", name: "תיק יפה", owner: "3a", category: "BackPacks",
+                                                images: [UIImage(imageLiteralResourceName: "backpack1")])
+             let backpack2 = Item(id: "3", name: "תיק יפה", owner: "3a", category: "BackPacks",
+                                                images: [UIImage(imageLiteralResourceName: "backpack2")])
+             let backpack3 = Item(id: "3", name: "תיק יפה", owner: "3a", category: "BackPacks",
+                                                images: [UIImage(imageLiteralResourceName: "backpack3")])
+             let backpack4 = Item(id: "3", name: "תיק יפה", owner: "3a", category: "BackPacks",
+                                                images: [UIImage(imageLiteralResourceName: "backpack4")])
+             let backpack5 = Item(id: "3", name: "תיק יפה", owner: "3a", category: "BackPacks",
+                                                images: [UIImage(imageLiteralResourceName: "backpack5")])
+             let backpack6 = Item(id: "3", name: "תיק יפה", owner: "3a", category: "BackPacks",
+                                                images: [UIImage(imageLiteralResourceName: "backpack6")])
+             let backpack7 = Item(id: "3", name: "תיק יפה", owner: "3a", category: "BackPacks",
+                                                images: [UIImage(imageLiteralResourceName: "backpack7")])
+             let backpack8 = Item(id: "3", name: "תיק יפה", owner: "3a", category: "BackPacks",
+                                                images: [UIImage(imageLiteralResourceName: "backpack8")])
+             
+             let dyson = Item(id: "1", name: "דייסון", owner: "1a", category: "Vacooms",
+                              images: [UIImage(imageLiteralResourceName: "dyson_vacume")], currentOffers:
+             [Offer(owner: "1", ownerInventory: [backpack1]),
+             Offer(owner: "2", ownerInventory: [backpack2, backpack3, backpack4,
+                                             backpack5, backpack6, backpack7, backpack8])])
+            
+             let sonyPlaystation = Item(id: "2", name: "סוני פלייסטיישן", owner: "2b", category: "VideoGames",
+                             images: [UIImage(imageLiteralResourceName: "sony_playstation")])
+             
+             let electricBicycle = Item(id: "3", name: "אופניים חשמליים", owner: "3c", category: "ElectricBicycle",
+                                         images: [UIImage(imageLiteralResourceName: "electric_bicycle")])
+             
+             
+             bestReccomendations = [electricBicycle, dyson, sonyPlaystation]
+        }
+        
+        return bestReccomendations!
     }
     
     func provideUserCategories() -> [Category] {

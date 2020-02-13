@@ -12,13 +12,15 @@ import UIKit
 protocol ItemsManagerDelegate {
     func moveToItemScreen(item:Item)
     func likedItem(item: Item)
-    func deleteItem(collectionViewCell: UICollectionViewCell)
+    func deleteItemWithCell(collectionViewCell: UICollectionViewCell)
+    func deleteItemWithItem(item: Item)
 }
 
 class FeedViewController:UIViewController, ItemsManagerDelegate {
 
     @IBOutlet var feedTableView: UITableView!
     var presenter: FeedPresenterCapabilities?
+    
     var categories:[Category]? {
         didSet {
             feedTableView.reloadData()
@@ -31,6 +33,12 @@ class FeedViewController:UIViewController, ItemsManagerDelegate {
         feedTableView.separatorStyle = .none
 
         categories = presenter?.fetchCaegories()
+
+        title = "עבורך"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.post(Notification(name: Notification.Name("fixUserReccomendationsCollectionViewPlacing")))
     }
     
     func moveToItemScreen(item:Item) {
@@ -39,7 +47,9 @@ class FeedViewController:UIViewController, ItemsManagerDelegate {
         }
         vc.itemsManagerDelegate = self
         vc.item = item
-        present(vc, animated: true, completion: nil)
+        navigationController?.hero.isEnabled = true
+        navigationController?.hero.navigationAnimationType = .autoReverse(presenting: .slide(direction: .left))
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func likedItem(item: Item) {
@@ -49,15 +59,20 @@ class FeedViewController:UIViewController, ItemsManagerDelegate {
         let title = "בהצלחה!"
         let details = "בקרוב בעל המוצר יקבל את ההודעה שלך. במידה ויאהב את אחד ממוצריך- אולי תוכלו להשלים את העסקה!"
         vc.set(title: title, details: details)
-        present(vc, animated: true, completion: {
-            let _ = Timer.scheduledTimer(withTimeInterval: 7, repeats: false) { (_) in
-                vc.dismiss(animated: true, completion: nil)
-            }
-        })
+        navigationController?.popToViewController(self, animated: true)
+        present(vc, animated: true) {
+            self.deleteItemWithItem(item: item)
+        }
     }
 
-    func deleteItem(collectionViewCell: UICollectionViewCell) {
+    func deleteItemWithCell(collectionViewCell: UICollectionViewCell) {
         
+    }
+    
+    func deleteItemWithItem(item: Item) {
+        let userInfo = ["item": item]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "deleteSpecialRecommendationItem"), object: nil, userInfo: userInfo)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "deleteBestRecommendationItem"), object: nil, userInfo: userInfo)
     }
 }
 
@@ -90,7 +105,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
             return tableView.frame.height / 2.2
         } else {
             //TODO chech how to do it realtive to the iphone size
-            return tableView.frame.height / 3.7
+            return tableView.frame.height / 3.4
         }
     }
     

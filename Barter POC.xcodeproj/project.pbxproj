@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,9 @@
 		2F02ED3923E0B88B00BD20C6 /* BestRecommendationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F02ED3823E0B88B00BD20C6 /* BestRecommendationTableViewCell.swift */; };
 		2F02ED3B23E0BB6F00BD20C6 /* BestRecommendedItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F02ED3A23E0BB6F00BD20C6 /* BestRecommendedItemCollectionViewCell.swift */; };
 		2F02ED3D23E0BD7100BD20C6 /* UserSpecialRecommendationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F02ED3C23E0BD7100BD20C6 /* UserSpecialRecommendationsTableViewCell.swift */; };
+		2F063C9B23EFEEAE0086CFE3 /* OpenOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F063C9A23EFEEAE0086CFE3 /* OpenOffersViewController.swift */; };
+		2F063C9E23EFEF990086CFE3 /* InventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F063C9D23EFEF990086CFE3 /* InventoryTableViewCell.swift */; };
+		2F063CA023EFF0C60086CFE3 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F063C9F23EFF0C60086CFE3 /* ItemCell.swift */; };
 		2F36973623DF57EF00B9ED2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36973523DF57EF00B9ED2D /* AppDelegate.swift */; };
 		2F36973823DF57EF00B9ED2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36973723DF57EF00B9ED2D /* SceneDelegate.swift */; };
 		2F36973A23DF57EF00B9ED2D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36973923DF57EF00B9ED2D /* SearchViewController.swift */; };
@@ -25,11 +28,21 @@
 		2F36976D23DF8FC700B9ED2D /* ShadowRoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36976C23DF8FC700B9ED2D /* ShadowRoundedImageView.swift */; };
 		2F36976F23E0224F00B9ED2D /* GoodLuckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36976E23E0224F00B9ED2D /* GoodLuckViewController.swift */; };
 		2F57170223E40F5400B64FCD /* WinningPickItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F57170123E40F5400B64FCD /* WinningPickItemViewController.swift */; };
+		2F64AF7F23F3238D006E6D2A /* OpenOffersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F64AF7E23F3238D006E6D2A /* OpenOffersPresenter.swift */; };
+		2F9F104023ECA4B900159F44 /* MyItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9F103F23ECA4B900159F44 /* MyItemsViewController.swift */; };
+		2F9F104323ECA7E200159F44 /* MyItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9F104223ECA7E200159F44 /* MyItemCollectionViewCell.swift */; };
+		2F9F104523ECB01A00159F44 /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9F104423ECB01A00159F44 /* ItemDetailsViewController.swift */; };
 		2FB1623923E1EDAF00AB0D39 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB1623823E1EDAF00AB0D39 /* AddItemViewController.swift */; };
 		2FB1623B23E202FC00AB0D39 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB1623A23E202FC00AB0D39 /* Extensions.swift */; };
 		2FB1623E23E2094200AB0D39 /* ImageAddingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB1623D23E2094200AB0D39 /* ImageAddingTableViewCell.swift */; };
 		2FB1624023E2096100AB0D39 /* CategroyAndNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB1623F23E2096100AB0D39 /* CategroyAndNameTableViewCell.swift */; };
 		2FB1624223E2098500AB0D39 /* AgeDetailsAndAreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB1624123E2098500AB0D39 /* AgeDetailsAndAreaTableViewCell.swift */; };
+		2FC8869323EEA41E002D1910 /* MyItemsViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8869223EEA41E002D1910 /* MyItemsViewControllerPresenter.swift */; };
+		2FC8869523EEA93C002D1910 /* ChooseOneInventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8869423EEA93C002D1910 /* ChooseOneInventoryViewController.swift */; };
+		2FC8869723EF51F7002D1910 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8869623EF51F7002D1910 /* Deal.swift */; };
+		2FC8869A23EF56E2002D1910 /* EmptyOffersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8869923EF56E2002D1910 /* EmptyOffersCollectionViewCell.swift */; };
+		2FC8869C23EF56F6002D1910 /* OffersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8869B23EF56F6002D1910 /* OffersCollectionViewCell.swift */; };
+		2FC8869E23EF5862002D1910 /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC8869D23EF5862002D1910 /* OfferCell.swift */; };
 		2FD364A323E6081A00B1CB00 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD364A223E6081A00B1CB00 /* SpinnerViewController.swift */; };
 		2FDBCE8C23E61E400061A01D /* BeforeSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDBCE8B23E61E400061A01D /* BeforeSearchCollectionViewCell.swift */; };
 		2FDDA93A23E56E3100C42AC3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDA93923E56E3100C42AC3 /* Item.swift */; };
@@ -70,6 +83,9 @@
 		2F02ED3823E0B88B00BD20C6 /* BestRecommendationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestRecommendationTableViewCell.swift; sourceTree = "<group>"; };
 		2F02ED3A23E0BB6F00BD20C6 /* BestRecommendedItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestRecommendedItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F02ED3C23E0BD7100BD20C6 /* UserSpecialRecommendationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSpecialRecommendationsTableViewCell.swift; sourceTree = "<group>"; };
+		2F063C9A23EFEEAE0086CFE3 /* OpenOffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOffersViewController.swift; sourceTree = "<group>"; };
+		2F063C9D23EFEF990086CFE3 /* InventoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCell.swift; sourceTree = "<group>"; };
+		2F063C9F23EFF0C60086CFE3 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		2F36973223DF57EF00B9ED2D /* Barter POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Barter POC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F36973523DF57EF00B9ED2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F36973723DF57EF00B9ED2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,11 +105,21 @@
 		2F36976C23DF8FC700B9ED2D /* ShadowRoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowRoundedImageView.swift; sourceTree = "<group>"; };
 		2F36976E23E0224F00B9ED2D /* GoodLuckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodLuckViewController.swift; sourceTree = "<group>"; };
 		2F57170123E40F5400B64FCD /* WinningPickItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningPickItemViewController.swift; sourceTree = "<group>"; };
+		2F64AF7E23F3238D006E6D2A /* OpenOffersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOffersPresenter.swift; sourceTree = "<group>"; };
+		2F9F103F23ECA4B900159F44 /* MyItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItemsViewController.swift; sourceTree = "<group>"; };
+		2F9F104223ECA7E200159F44 /* MyItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F9F104423ECB01A00159F44 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
 		2FB1623823E1EDAF00AB0D39 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		2FB1623A23E202FC00AB0D39 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2FB1623D23E2094200AB0D39 /* ImageAddingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddingTableViewCell.swift; sourceTree = "<group>"; };
 		2FB1623F23E2096100AB0D39 /* CategroyAndNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategroyAndNameTableViewCell.swift; sourceTree = "<group>"; };
 		2FB1624123E2098500AB0D39 /* AgeDetailsAndAreaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeDetailsAndAreaTableViewCell.swift; sourceTree = "<group>"; };
+		2FC8869223EEA41E002D1910 /* MyItemsViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItemsViewControllerPresenter.swift; sourceTree = "<group>"; };
+		2FC8869423EEA93C002D1910 /* ChooseOneInventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseOneInventoryViewController.swift; sourceTree = "<group>"; };
+		2FC8869623EF51F7002D1910 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
+		2FC8869923EF56E2002D1910 /* EmptyOffersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyOffersCollectionViewCell.swift; sourceTree = "<group>"; };
+		2FC8869B23EF56F6002D1910 /* OffersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCollectionViewCell.swift; sourceTree = "<group>"; };
+		2FC8869D23EF5862002D1910 /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
 		2FD364A223E6081A00B1CB00 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		2FDBCE8B23E61E400061A01D /* BeforeSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		2FDDA93923E56E3100C42AC3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -159,6 +185,25 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		2F063C9923EFEE920086CFE3 /* OpenOffers */ = {
+			isa = PBXGroup;
+			children = (
+				2F063C9A23EFEEAE0086CFE3 /* OpenOffersViewController.swift */,
+				2F063C9C23EFEF830086CFE3 /* Cells */,
+				2F64AF7E23F3238D006E6D2A /* OpenOffersPresenter.swift */,
+			);
+			path = OpenOffers;
+			sourceTree = "<group>";
+		};
+		2F063C9C23EFEF830086CFE3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2F063C9D23EFEF990086CFE3 /* InventoryTableViewCell.swift */,
+				2F063C9F23EFF0C60086CFE3 /* ItemCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		2F36972923DF57EF00B9ED2D = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +234,8 @@
 				2F36976923DF6FBC00B9ED2D /* ItemViewController.swift */,
 				2FE5936E23E5930C00FBCB94 /* MockDetails */,
 				2FDDA93623E56DB100C42AC3 /* SharedModels */,
+				2F063C9923EFEE920086CFE3 /* OpenOffers */,
+				2F9F103E23ECA49F00159F44 /* MyItems */,
 				2F57170023E40F3500B64FCD /* WinningPIckItem */,
 				2FB1623723E1ED8E00AB0D39 /* AddItem */,
 				2F02ED3423E0B6DC00BD20C6 /* Feed */,
@@ -254,8 +301,29 @@
 			isa = PBXGroup;
 			children = (
 				2F57170123E40F5400B64FCD /* WinningPickItemViewController.swift */,
+				2FC8869423EEA93C002D1910 /* ChooseOneInventoryViewController.swift */,
+				2FC8869823EF56BC002D1910 /* Cells */,
 			);
 			path = WinningPIckItem;
+			sourceTree = "<group>";
+		};
+		2F9F103E23ECA49F00159F44 /* MyItems */ = {
+			isa = PBXGroup;
+			children = (
+				2F9F103F23ECA4B900159F44 /* MyItemsViewController.swift */,
+				2F9F104423ECB01A00159F44 /* ItemDetailsViewController.swift */,
+				2FC8869223EEA41E002D1910 /* MyItemsViewControllerPresenter.swift */,
+				2F9F104123ECA7D300159F44 /* Cells */,
+			);
+			path = MyItems;
+			sourceTree = "<group>";
+		};
+		2F9F104123ECA7D300159F44 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2F9F104223ECA7E200159F44 /* MyItemCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		2FB1623723E1ED8E00AB0D39 /* AddItem */ = {
@@ -277,10 +345,21 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		2FC8869823EF56BC002D1910 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2FC8869923EF56E2002D1910 /* EmptyOffersCollectionViewCell.swift */,
+				2FC8869B23EF56F6002D1910 /* OffersCollectionViewCell.swift */,
+				2FC8869D23EF5862002D1910 /* OfferCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		2FDDA93623E56DB100C42AC3 /* SharedModels */ = {
 			isa = PBXGroup;
 			children = (
 				2FDDA93923E56E3100C42AC3 /* Item.swift */,
+				2FC8869623EF51F7002D1910 /* Deal.swift */,
 			);
 			path = SharedModels;
 			sourceTree = "<group>";
@@ -331,7 +410,6 @@
 				7EB48E819467CDC855A2B47C /* Pods-Barter POCUITests.debug.xcconfig */,
 				43A2A052FA0CB5EB91519CD3 /* Pods-Barter POCUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -356,6 +434,7 @@
 				2F36972E23DF57EF00B9ED2D /* Sources */,
 				2F36972F23DF57EF00B9ED2D /* Frameworks */,
 				2F36973023DF57EF00B9ED2D /* Resources */,
+				D3D0A69F9FF508434B3AC793 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -541,6 +620,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D3D0A69F9FF508434B3AC793 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Barter POC/Pods-Barter POC-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Barter POC/Pods-Barter POC-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Barter POC/Pods-Barter POC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -550,28 +646,41 @@
 			files = (
 				2FDE7F4E23E0CE0B008836FC /* UserSpecialRecommendationCollectionViewCell.swift in Sources */,
 				2F36976A23DF6FBC00B9ED2D /* ItemViewController.swift in Sources */,
+				2F9F104523ECB01A00159F44 /* ItemDetailsViewController.swift in Sources */,
+				2F64AF7F23F3238D006E6D2A /* OpenOffersPresenter.swift in Sources */,
 				2F36973A23DF57EF00B9ED2D /* SearchViewController.swift in Sources */,
 				2FE5937923E59CBB00FBCB94 /* FeedPresenter.swift in Sources */,
 				2F36973623DF57EF00B9ED2D /* AppDelegate.swift in Sources */,
 				2F36976F23E0224F00B9ED2D /* GoodLuckViewController.swift in Sources */,
+				2F063C9E23EFEF990086CFE3 /* InventoryTableViewCell.swift in Sources */,
 				2F57170223E40F5400B64FCD /* WinningPickItemViewController.swift in Sources */,
+				2FC8869E23EF5862002D1910 /* OfferCell.swift in Sources */,
 				2FE4BD0D23E5ED4400A76152 /* SearchPresenter.swift in Sources */,
 				2FB1623E23E2094200AB0D39 /* ImageAddingTableViewCell.swift in Sources */,
 				2FE5937B23E5A29000FBCB94 /* UserSpecialRecommendationPresenter.swift in Sources */,
 				2FE5937223E5943400FBCB94 /* BestRecommendationsPresenter.swift in Sources */,
 				2FB1623923E1EDAF00AB0D39 /* AddItemViewController.swift in Sources */,
 				2FDBCE8C23E61E400061A01D /* BeforeSearchCollectionViewCell.swift in Sources */,
+				2FC8869323EEA41E002D1910 /* MyItemsViewControllerPresenter.swift in Sources */,
+				2F9F104023ECA4B900159F44 /* MyItemsViewController.swift in Sources */,
 				2F36976823DF586900B9ED2D /* SearchCollectionViewCell.swift in Sources */,
+				2FC8869523EEA93C002D1910 /* ChooseOneInventoryViewController.swift in Sources */,
 				2F02ED3B23E0BB6F00BD20C6 /* BestRecommendedItemCollectionViewCell.swift in Sources */,
+				2FC8869C23EF56F6002D1910 /* OffersCollectionViewCell.swift in Sources */,
 				2F36976D23DF8FC700B9ED2D /* ShadowRoundedImageView.swift in Sources */,
 				2F02ED3623E0B72900BD20C6 /* FeedViewController.swift in Sources */,
 				2FD364A323E6081A00B1CB00 /* SpinnerViewController.swift in Sources */,
 				2FB1624023E2096100AB0D39 /* CategroyAndNameTableViewCell.swift in Sources */,
+				2F063CA023EFF0C60086CFE3 /* ItemCell.swift in Sources */,
+				2F063C9B23EFEEAE0086CFE3 /* OpenOffersViewController.swift in Sources */,
 				2F02ED3923E0B88B00BD20C6 /* BestRecommendationTableViewCell.swift in Sources */,
+				2FC8869723EF51F7002D1910 /* Deal.swift in Sources */,
 				2FDDA93A23E56E3100C42AC3 /* Item.swift in Sources */,
 				2FB1624223E2098500AB0D39 /* AgeDetailsAndAreaTableViewCell.swift in Sources */,
+				2FC8869A23EF56E2002D1910 /* EmptyOffersCollectionViewCell.swift in Sources */,
 				2F36973823DF57EF00B9ED2D /* SceneDelegate.swift in Sources */,
 				2F02ED3D23E0BD7100BD20C6 /* UserSpecialRecommendationsTableViewCell.swift in Sources */,
+				2F9F104323ECA7E200159F44 /* MyItemCollectionViewCell.swift in Sources */,
 				2FB1623B23E202FC00AB0D39 /* Extensions.swift in Sources */,
 				2FE5937423E5966000FBCB94 /* MockFactory.swift in Sources */,
 				2FE5937723E59C4B00FBCB94 /* Category.swift in Sources */,

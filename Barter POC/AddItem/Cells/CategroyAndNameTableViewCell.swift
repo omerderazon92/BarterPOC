@@ -14,12 +14,22 @@ protocol TitleAndCategoryEditingDelegate {
     func provideItemCategory(itemCategory:String)
 }
 
-class CategroyAndNameTableViewCell:UITableViewCell, TitleAndCategoryEditingDelegate, UITextFieldDelegate {
+class CategroyAndNameTableViewCell:UITableViewCell, TitleAndCategoryEditingDelegate, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet var itemTitleTextField: UITextField!
+    @IBOutlet var itemCategoryTextField: UITextField!
+    @IBOutlet var itemDescriptionTextView: UITextView!
     
     func set() {
         itemTitleTextField.delegate = self
+        itemDescriptionTextView.delegate = self
+        itemCategoryTextField.delegate = self
+        
+        itemDescriptionTextView.layer.borderColor = UIColor.lightGray.cgColor
+        itemDescriptionTextView.layer.cornerRadius = 10
+        itemDescriptionTextView.layer.borderWidth = 0.5
+        itemDescriptionTextView.text = "פרטים נוספים"
+        itemDescriptionTextView.textColor = UIColor.lightGray
     }
     
     func provideItemTitle() -> String? {
@@ -31,7 +41,26 @@ class CategroyAndNameTableViewCell:UITableViewCell, TitleAndCategoryEditingDeleg
     }
  
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        itemTitleTextField.endEditing(true)
+        if (textField == itemTitleTextField) {
+            itemTitleTextField.endEditing(true)
+        } else if (textField == itemCategoryTextField) {
+            itemCategoryTextField.endEditing(true)
+        }
+        return true
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "פרטים נוספים"
+            textView.textColor = UIColor.lightGray
+        }
     }
 }
 

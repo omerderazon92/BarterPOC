@@ -10,42 +10,45 @@ import Foundation
 import UIKit
 
 class WinningPickItemViewController: UIViewController {
-   
-    @IBOutlet var numberOfPresentsLabel: UILabel!
-    @IBOutlet var details: UILabel!
-    @IBOutlet var instructionsLabel: UILabel!
-    
+
+    @IBOutlet var winningPickItemVIewColletionView: UICollectionView!
+    var potentialDeals:[Deal]? {
+        didSet {
+            
+        }
+    }
     override func viewDidLoad() {
-        numberOfPresentsLabel.text = "כל יום פורים!"
-        details.text = "מחכים לך 36 מוצרים שיכולים להיות שלך, איזה כיף."
-        instructionsLabel.text = "שקשק כדי לגלות"
-        let timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (_) in
-            self.instructionsLabel.shake()
-        }
+        winningPickItemVIewColletionView.delegate = self
+        winningPickItemVIewColletionView.dataSource = self
     }
-    
-    // We are willing to become first responder to get shake motion
-    override var canBecomeFirstResponder: Bool {
-        get {
-            return true
-        }
-    }
-
-    // Enable detection of shake motion
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if motion == .motionShake {
-            let vc = storyboard?.instantiateViewController(identifier: "GoodLuckViewController") as! GoodLuckViewController
-            let title = "ברכות, מישהו אהב את הקורקינט שלך!"
-            let details = "מיד יוצגו בפניך 5 פריטים שיכולים להיות שלך. קח כיסא, תרגע ותהנה :)"
-            vc.set(title: title, details: details, starsColor: UIColor.cyan)
-            present(vc, animated: true, completion: {
-                let _ = Timer.scheduledTimer(withTimeInterval: 7.0, repeats: false) { _ in
-                vc.dismiss(animated: true, completion: nil)
-                }
-            })
-        }
-    }
-
 }
 
+extension WinningPickItemViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return potentialDeals?.count ?? 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        if (potentialDeals?.count == nil) {
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmptyOffersCollectionViewCell", for: indexPath) as! EmptyOffersCollectionViewCell
+//            return cell
+//        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OffersCollectionViewCell", for: indexPath) as! OffersCollectionViewCell
+        cell.set()
+        return cell
+    }
+}
 
+extension WinningPickItemViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        if (indexPath.item == 0) {
+//            return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+//        }
+        
+        return CGSize(width: view.frame.width / 1.05, height: view.frame.height / 7)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 25, left: 0, bottom: 25, right: 0)
+    }
+}

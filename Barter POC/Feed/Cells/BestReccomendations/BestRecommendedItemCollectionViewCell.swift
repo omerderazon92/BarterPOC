@@ -18,11 +18,10 @@ class BestRecommendedItemCollectionViewCell: UICollectionViewCell {
     private var item:Item?
     
     func set(item:Item){
+        itemImage.shadowLayer.opacity = 0
         self.item = item
-
         backgroundColor = .clear
         itemImage.image = item.images.first
-        itemImage.shadowLayer.shadowOffset = CGSize(width: 10, height: 6)
         itemImage.layer.cornerRadius = 10
         itemImage.layer.borderWidth = 0.5
         itemImage.layer.borderColor = UIColor.lightGray.cgColor
@@ -36,11 +35,31 @@ class BestRecommendedItemCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func imageTapped() {
-        bounceAndShine(completion: {
+//        bounceAndShine(completion: {
+//            let generatedString = Int.random(in: 1...1500)
+//            self.itemImage.hero.id = generatedString.description
+//            ItemViewController.id = generatedString
+//
+//            let generatedString2 = Int.random(in: 1...1500)
+//            self.titleOfItemLabel.hero.id = generatedString2.description
+//            ItemViewController.idForLabel = generatedString2
+//
+//            self.delegate?.moveToItemScreen(item: self.item!)
+//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+//               self.transform = CGAffineTransform.identity
+//            }
+//        })
+        let generatedString = Int.random(in: 1...1500)
+        self.itemImage.hero.id = generatedString.description
+        ItemViewController.id = generatedString
+        
+        let generatedString2 = Int.random(in: 1...1500)
+        self.titleOfItemLabel.hero.id = generatedString2.description
+        ItemViewController.idForLabel = generatedString2
+        
+        smallBounce(completion: {
             self.delegate?.moveToItemScreen(item: self.item!)
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-               self.transform = CGAffineTransform.identity
-            }
+            self.transform = .identity
         })
     }
 }
