@@ -16,6 +16,16 @@ protocol ItemsManagerDelegate {
     func deleteItemWithItem(item: Item)
 }
 
+extension ItemsManagerDelegate {
+    func deleteItemWithCell(collectionViewCell: UICollectionViewCell) {
+        
+    }
+    
+    func deleteItemWithItem(item: Item) {
+        
+    }
+}
+
 class FeedViewController:UIViewController, ItemsManagerDelegate {
 
     @IBOutlet var feedTableView: UITableView!
@@ -63,10 +73,6 @@ class FeedViewController:UIViewController, ItemsManagerDelegate {
         present(vc, animated: true) {
             self.deleteItemWithItem(item: item)
         }
-    }
-
-    func deleteItemWithCell(collectionViewCell: UICollectionViewCell) {
-        
     }
     
     func deleteItemWithItem(item: Item) {

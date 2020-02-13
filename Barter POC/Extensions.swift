@@ -101,19 +101,13 @@ extension UIView {
     }
     
     func smallBounce(completion: (() -> ())?) {
-//        UIView.animate(withDuration: 0.1, animations: {
-//            self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-//        }, completion: { _ in
-//            guard let completeTransition = completion else {
-//                return
-//            }
-//            completeTransition()
-//        })
-        let darkerView = UIView()
-        darkerView.backgroundColor = .black
-        darkerView.alpha = 0.4
-        
-        darkerView.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
-        addSubview(darkerView)
+        UIView.animate(withDuration: 0.1, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        }, completion: { _ in
+            guard let completeTransition = completion else {
+                return
+            }
+            completeTransition()
+        })
     }
 }

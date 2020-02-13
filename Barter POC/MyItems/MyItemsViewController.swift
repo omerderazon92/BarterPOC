@@ -55,14 +55,6 @@ class MyItemsViewController: UIViewController, ItemsManagerDelegate {
     func likedItem(item: Item) {
         
     }
-    
-    func deleteItemWithCell(collectionViewCell: UICollectionViewCell) {
-        
-    }
-    
-    func deleteItemWithItem(item: Item) {
-        
-    }
 }
 
 extension MyItemsViewController: UICollectionViewDelegate, UICollectionViewDataSource {

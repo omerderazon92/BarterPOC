@@ -48,14 +48,6 @@ class OpenOffersViewController: UIViewController, ItemsManagerDelegate {
         navigationItem.rightBarButtonItem?.isEnabled = true
     }
     
-    func deleteItemWithCell(collectionViewCell: UICollectionViewCell) {
-        
-    }
-    
-    func deleteItemWithItem(item: Item) {
-        
-    }
-    
     @objc func sendRequests() {
         guard let vc = storyboard?.instantiateViewController(identifier: "GoodLuckViewController") as? GoodLuckViewController else {
             return
